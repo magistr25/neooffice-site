@@ -24,7 +24,7 @@ body {
     margin: 0 auto;
 }
 .container {
-    max-width: 1200px;
+    max-width: 1558px;
     margin: 0 auto;
     padding: 0 16px;
     display: flex;
@@ -36,7 +36,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0);
     color: white;
     padding: 16px 0;
 }
@@ -58,7 +58,7 @@ body {
     transition: color 0.3s;
     color: #ffffff;
     line-height: 1.6;
-    text-align: center;
+    text-align: left;
     display: flex;
     align-items: center;
 }
@@ -103,6 +103,80 @@ a:visited {
     gap: 12px;
 }
 
+
+.hero {
+    background: rgba(0, 0, 0);;
+    padding: 0 0;
+    height: 923px;
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.hero__content {
+    max-width: 600px;
+    margin-top: 150px;
+}
+
+.hero__title {
+    font-size: 48px;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-family: 'Prata', serif;
+}
+
+.hero__subtitle {
+    font-size: 18px;
+    margin-bottom: 24px;
+    color: #ccc;
+}
+
+.hero__benefits {
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+.hero__benefits li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 24px;
+}
+
+.hero__benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #0f0;
+}
+
+.hero__btn {
+    background: white;
+    color: black;
+    padding: 12px 24px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero__btn:hover {
+    background: #e2e2e2;
+}
+
+.hero__image img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    position: absolute;
+    border-radius: 8px;
+    top: 0;
+    right: 0;
+    z-index: 2000;
+}
+
 /* === Media Queries === */
 @media screen and (max-width: 768px) {
     .header .container {
@@ -116,12 +190,17 @@ a:visited {
         gap: 12px;
     }
 
+    .nav {
+        margin: 0 auto;
+    }
+
     .nav-footer {
         width: 100%;
         justify-content: flex-start;
     }
+
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 769px) {
     body {
         font-size: 18px;
     }
@@ -131,5 +210,68 @@ a:visited {
     .nav {
         margin-left: 150px;
     }
+
+    .hero__container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hero__title {
+        font-size: 80px;
+    }
+
+    .hero__subtitle {
+        font-size: 20px;
+    }
 }
 
+@media screen and (min-width: 800px) {
+    .nav {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1370px) {
+    .logo {
+        font-size: 20px;
+    }
+    .hero {
+        position: relative;
+        height: calc(100vh - 80px);
+        background:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('../img/neoOffice1.png') center top / cover no-repeat scroll;
+        overflow: hidden;
+    }
+
+
+    .hero__image {
+        display: none;
+    }
+
+    .hero__container {
+        position: relative;
+        z-index: 1;
+        padding: 40px 24px;
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero__content {
+        margin-top: 0;
+    }
+
+    .hero__title {
+        margin-top: 30px;
+    }
+
+}
+@media screen and (min-width: 1370px) {
+    .nav {
+        margin-left: 180px;
+    }
+
+}
