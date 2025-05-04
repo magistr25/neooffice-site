@@ -1,0 +1,15 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+/shelf/
+/workspace.xml
+/tasks.xml
+/dataSources/
+/dataSources.local.xml
+/httpRequests/
+
+# OS files
+.DS_Store
+Thumbs.db
+
