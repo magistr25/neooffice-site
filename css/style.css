@@ -1,30 +1,28 @@
+/* === Base Reset === */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.5;
-    background: #333333;
+    background: #333;
     color: #fff;
 }
+/* === Layout === */
 .wrapper {
     margin: 0 auto;
 }
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 16px;
+    display: flex;
+    flex-direction: row;
 }
 
+/* === Header === */
 .header {
     position: sticky;
     top: 0;
@@ -33,31 +31,96 @@ a {
     color: white;
     padding: 16px 0;
 }
-
-.nav a {
-    margin-left: 24px;
-    font-weight: bold;
-}
-
 .logo {
-    font-size: 20px;
+    font-size: 36px;
+    font-weight: 400;
+    font-family: 'Prata', serif;
+}
+.nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 16px;
+}
+.nav a {
     font-weight: bold;
+    transition: color 0.3s;
+    color: #ffffff;
+    line-height: 1.6;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.nav a:hover {
+    color: #fff;
 }
 
+a,
+a:visited {
+    color: inherit; /* или конкретный цвет, например: white */
+    text-decoration: none;
+}
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 16px 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Ссылки в футере */
+.nav-footer {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.nav-footer-bottom {
+    display: flex;
+    align-items: center;
+
+}
+
+.footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+/* === Media Queries === */
+@media screen and (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .nav-footer {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
 @media screen and (min-width: 1024px) {
     body {
         font-size: 18px;
-
     }
     .wrapper {
         max-width: 1920px;
     }
-    .header {
-        height: 100vh;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
+    .nav {
+        margin-left: 150px;
     }
 }
+
