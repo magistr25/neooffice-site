@@ -7,19 +7,22 @@
 }
 
 
-/* === Base Reset === */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.5;
     background: #333;
     color: #fff;
 }
-/* === Layout === */
 .wrapper {
     margin: 0 auto;
 }
@@ -31,7 +34,6 @@ body {
     flex-direction: row;
 }
 
-/* === Header === */
 .header {
     position: sticky;
     top: 0;
@@ -47,7 +49,7 @@ body {
 }
 .nav {
     display: flex;
-    gap: 15px;
+    gap: 18px;
     flex-wrap: wrap;
     font-family: Arial, sans-serif;
     font-style: italic;
@@ -56,19 +58,31 @@ body {
 .nav a {
     font-weight: bold;
     transition: color 0.3s;
-    color: #ffffff;
     line-height: 1.6;
     text-align: left;
     display: flex;
     align-items: center;
-}
-.nav a:hover {
-    color: #fff;
+    color: #ffffff;
 }
 
+.nav a:hover {
+    color: #bfbfc7;
+    transform: scale(1.1);
+    transform-origin: center;
+}
+
+
+.nav a:focus {
+    color:  #9F9FA7;
+}
+.nav a:active {
+    color: #9F9FA7;
+    transform: scale(1.1);
+    transform-origin: center;
+}
 a,
 a:visited {
-    color: inherit;
+    color: #bfbfc7;
     text-decoration: none;
 }
 .footer {
@@ -84,7 +98,7 @@ a:visited {
     flex-wrap: wrap;
 }
 
-/* Ссылки в футере */
+
 .nav-footer {
     display: flex;
     gap: 24px;
@@ -117,7 +131,7 @@ a:visited {
 }
 
 .hero__content {
-    max-width: 600px;
+    max-width: 800px;
     margin-top: 150px;
 }
 
@@ -129,9 +143,10 @@ a:visited {
 }
 
 .hero__subtitle {
-    font-size: 18px;
-    margin-bottom: 24px;
-    color: #ccc;
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
 }
 
 .hero__benefits {
@@ -160,10 +175,21 @@ a:visited {
     border: none;
     cursor: pointer;
     transition: background 0.3s;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    width: 191px;
+    height: 96px;
+    margin-bottom: 50px;
 }
 
 .hero__btn:hover {
-    background: #e2e2e2;
+    background-color: #bfbfc7;
+}
+
+.hero__btn:active {
+    background-color: #a9a9b0;
+    transform: translateY(2px);
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hero__image img {
@@ -177,7 +203,17 @@ a:visited {
     z-index: 2000;
 }
 
-/* === Media Queries === */
+li {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}
+
+strong {
+    font-weight: 400;
+    font-family: 'Prata', serif;
+    font-size: 40px;
+}
+
 @media screen and (max-width: 768px) {
     .header .container {
         flex-direction: column;
@@ -200,6 +236,28 @@ a:visited {
     }
 
 }
+@media screen and (max-width: 768px) {
+    .hero__benefits li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+        line-height: 1.2;
+    }
+
+    .hero__benefits li strong {
+        display: inline-block;
+        font-family: 'Prata', serif;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 1;
+        margin: 0;
+    }
+
+
+}
+
 @media screen and (min-width: 769px) {
     body {
         font-size: 18px;
@@ -222,7 +280,25 @@ a:visited {
     }
 
     .hero__subtitle {
-        font-size: 20px;
+        font-size: 30px;
+    }
+
+    .hero__benefits li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 24px;
+        font-family: Arial, sans-serif;
+        line-height: 1.2;
+    }
+
+    .hero__benefits li strong {
+        display: inline-block;
+        font-family: 'Prata', serif;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 1;
+        margin: 0;
     }
 }
 
@@ -241,7 +317,7 @@ a:visited {
         height: calc(100vh - 80px);
         background:
                 linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('../img/neoOffice1.png') center top / cover no-repeat scroll;
+                url('../img/neoOffice.png') center top / cover no-repeat scroll;
         overflow: hidden;
     }
 
@@ -258,14 +334,11 @@ a:visited {
         height: 100%;
         display: flex;
         align-items: center;
-    }
 
-    .hero__content {
-        margin-top: 0;
     }
 
     .hero__title {
-        margin-top: 30px;
+        margin-top: -100px;
     }
 
 }
@@ -275,3 +348,13 @@ a:visited {
     }
 
 }
+@media (orientation: portrait) {
+    .hero {
+        min-height: 120vh;
+    }
+    .hero__content {
+        margin-top: 30%;
+    }
+
+}
+

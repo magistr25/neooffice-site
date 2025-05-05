@@ -1,0 +1,24 @@
+<svg width="128" height="128" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <!-- Rose outline: central swirl and stylized petals -->
+    <g fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Central swirl -->
+        <path d="M32 32
+             C36 32 36 28 32 28
+             C28 28 28 32 32 32" />
+        <!-- Top petal -->
+        <path d="M32 20
+             C24 20 20 28 24 34
+             C28 40 36 40 40 34
+             C44 28 40 20 32 20 Z" />
+        <!-- Bottom petal -->
+        <path d="M32 40
+             C28 44 24 52 32 52
+             C40 52 36 44 32 40 Z" />
+        <!-- Left accent petal -->
+        <path d="M20 28
+             C16 32 16 44 24 46" />
+        <!-- Right accent petal -->
+        <path d="M44 28
+             C48 32 48 44 40 46" />
+    </g>
+</svg>
